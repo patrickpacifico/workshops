@@ -1,5 +1,5 @@
-# variable "time" {
-#   description = "Nome do time do recurso"
-#   default     = "GFT"
-#   type        = string
-# }
+variable "time" {
+  description = "Nome do time dono do recurso"
+  default     = "AWS BU"
+  type        = string
+}

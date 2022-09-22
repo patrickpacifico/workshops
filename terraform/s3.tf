@@ -1,9 +1,9 @@
 # resource "aws_s3_bucket" "gft" {
-#   bucket = "s3-gft-pacifico-workshop-aws"
+#   bucket        = "s3-gft-pacifico-aws"
 
 #   tags = {
 #     Create-by   = "Patrick Pacífico"
-#     # Cloud       = var.cloud
+#     Time        = var.time
 #     Terraform   = "true"
 #     Environment = "test"
 #   }
