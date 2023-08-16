@@ -1,0 +1,6 @@
+œ2023-08-16 15:24:02 [Test worker] DEBUG software.amazon.awssdk.request:84 - Sending Request: DefaultSdkHttpFullRequest(httpMethod=GET, protocol=https, host=lambda-artifacts-96ece076beabc628.s3.amazonaws.com, port=443, encodedPath=/inbound/sample-s3-java.png, headers=[amz-sdk-invocation-id, User-Agent, x-amz-te], queryParameters=[])
+o2023-08-16 15:24:03 [Test worker] DEBUG software.amazon.awssdk.request:84 - Received successful response: 200
+ê2023-08-16 15:24:04 [Test worker] INFO  example.Handler:113 - Writing to: lambda-artifacts-96ece076beabc628/resized-inbound/sample-s3-java.png
+ß2023-08-16 15:24:04 [Test worker] DEBUG software.amazon.awssdk.request:84 - Sending Request: DefaultSdkHttpFullRequest(httpMethod=PUT, protocol=https, host=lambda-artifacts-96ece076beabc628.s3.amazonaws.com, port=443, encodedPath=/resized-inbound/sample-s3-java.png, headers=[amz-sdk-invocation-id, Content-Length, Content-Type, Expect, User-Agent, x-amz-meta-Content-Length, x-amz-meta-Content-Type], queryParameters=[])
+o2023-08-16 15:24:05 [Test worker] DEBUG software.amazon.awssdk.request:84 - Received successful response: 200
+Â2023-08-16 15:24:05 [Test worker] INFO  example.Handler:80 - Successfully resized lambda-artifacts-96ece076beabc628/inbound/sample-s3-java.png and uploaded to lambda-artifacts-96ece076beabc628/resized-inbound/sample-s3-java.png

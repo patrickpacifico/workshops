@@ -1,0 +1,47 @@
+#GET
+aws ec2 describe-vpcs > vpcs.json
+aws ec2 describe-subnets > subnets.json
+aws ec2 describe-images --filters "Name=platform,Values=amazon" > ami_amazon.json
+
+subnet-00afe877f9f6c265e
+vpc-0a6be69e577598fb3
+ami-08a52ddb321b32a8c
+
+#START
+aws ec2 create-security-group \
+    --group-name demo-sg \
+    --description "AWS EC2 CLI Demo SG" \
+    --tag-specifications 'ResourceType=security-group,Tags=[{Key=Name,Value=demo-sg}]' \
+    --vpc-id "vpc-0a6be69e577598fb3"
+
+aws ec2 authorize-security-group-ingress \
+    --group-id "sg-058e619fe0e4ee1fc" \
+    --protocol tcp \
+    --port 22 \
+    --cidr "0.0.0.0/0" 
+
+aws ec2 create-key-pair \
+    --key-name MyKeyPair 
+
+aws ec2 run-instances \
+    --image-id ami-08a52ddb321b32a8c \
+    --count 1 \
+    --instance-type t2.micro \
+    --key-name MyKeyPair \
+    --security-group-ids sg-058e619fe0e4ee1fc \
+    --subnet-id subnet-00afe877f9f6c265e
+    
+aws ec2 describe-instances > ec2_instances.json
+
+aws ec2 stop-instances \
+    --instance-ids i-1234567890abcdef0
+
+aws ec2 start-instances \
+    --instance-ids i-1234567890abcdef0
+
+#DELETE
+aws ec2 terminate-instances \
+    --instance-ids i-05b686f110b229029
+
+
+aws ec2 delete-security-group --group-id sg-058e619fe0e4ee1fc
