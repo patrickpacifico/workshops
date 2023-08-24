@@ -1,0 +1,22 @@
+https://nodejs.org/en/download
+
+npm install -g aws-cdk
+
+cdk docs
+
+cdk init app --language java
+
+mvn package
+
+cdk synth
+
+cdk bootstrap
+A implantação de pilhas(stacks) com o AWS CDK exige que buckets dedicados do Amazon S3 e outros contêineres estejam disponíveis para o AWS CloudFormation durante a implantação. Criá-los é chamado de bootstrapping. 
+
+cdk deploy
+
+cdk diff
+
+cdk deploy
+
+cdk destroy
