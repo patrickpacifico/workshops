@@ -1,0 +1,7 @@
+terraform init
+
+terraform plan -var bucket='s3-pacifico-dio-iac-2408'
+
+terraform apply -var bucket='s3-pacifico-dio-iac-2408' -auto-approve
+
+terraform destroy -var bucket='s3-pacifico-dio-iac-2408'
